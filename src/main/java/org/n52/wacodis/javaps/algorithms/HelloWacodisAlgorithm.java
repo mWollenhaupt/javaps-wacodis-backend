@@ -22,9 +22,8 @@ import org.n52.javaps.algorithm.annotation.LiteralInput;
 import org.n52.javaps.algorithm.annotation.LiteralOutput;
 
 /**
- * TODO JavaDoc
  *
- * @author Christian Autermann
+ * @author <a href="mailto:s.drost@52north.org">Sebastian Drost</a>
  */
 @Algorithm(version = "1.0.0")
 public class HelloWacodisAlgorithm {
@@ -44,7 +43,7 @@ public class HelloWacodisAlgorithm {
 
     @LiteralOutput(identifier = "output")
     public String getOutput() {
-        return this.output;
+        return "WaCoDiS says: " + this.output;
     }
 
 }
