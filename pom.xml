@@ -13,50 +13,20 @@
         <geotools.version>17.1</geotools.version>
     </properties>
     
-    <dependencies>
+    <dependencies>   
         <dependency>
             <groupId>org.n52.wps</groupId>
             <artifactId>engine</artifactId>
             <version>1.0.1-SNAPSHOT</version>
         </dependency>
+        
+        <!--Arctic Sea Dependencies -->
         <dependency>
             <groupId>org.n52.shetland</groupId>
             <artifactId>shetland</artifactId>
             <version>1.0.0</version>
         </dependency>
-        <dependency>
-            <groupId>org.n52.janmayen</groupId>
-            <artifactId>janmayen</artifactId>
-            <version>1.2.0</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>joda-time</artifactId>
-                    <groupId>joda-time</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>com.vividsolutions</groupId>
-            <artifactId>jts</artifactId>
-            <version>1.13</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${version.slf4j}</version>
-        </dependency>
-       
-        <dependency>
-            <groupId>org.gdal</groupId>
-            <artifactId>gdal</artifactId>
-            <version>2.2.0</version>
-        </dependency> 
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>2.4</version>
-        </dependency>
-        
+
         <!--GeoTools Dependencies -->
         <dependency>
             <groupId>org.geotools</groupId>
@@ -101,7 +71,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-          <dependency>
+        <dependency>
             <groupId>org.geotools</groupId>
             <artifactId>gt-geojson</artifactId>
             <version>${geotools.version}</version>
@@ -111,6 +81,38 @@
                     <groupId>com.vividsolutions</groupId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.geotools</groupId>
+            <artifactId>gt-referencing</artifactId>
+            <version>${geotools.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.geotools</groupId>
+            <artifactId>gt-epsg-hsql</artifactId>
+            <version>${geotools.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.geotools</groupId>
+            <artifactId>gt-epsg-extension</artifactId>
+            <version>${geotools.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.vividsolutions</groupId>
+            <artifactId>jts</artifactId>
+            <version>1.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${version.slf4j}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.1</version>
         </dependency>
        
         <dependency>
