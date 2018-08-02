@@ -25,7 +25,9 @@
                            http://www.springframework.org/schema/util
                            http://www.springframework.org/schema/util/spring-util-4.1.xsd">
 
-	<bean id="helloWacodisAlgorithm" class="org.n52.wacodis.javaps.algorithms.HelloWacodisAlgorithm" />
+    <bean id="helloWacodisAlgorithm" class="org.n52.wacodis.javaps.algorithms.HelloWacodisAlgorithm" />
     <bean id="landCoverClassificationAlgorithm" class="org.n52.wacodis.javaps.algorithms.LandCoverClassificationAlgorithm" />
+    
+    <bean id="gml3Parser" class="org.n52.wacodis.javaps.io.datahandler.parser.Gml3Parser" />
 
 </beans>

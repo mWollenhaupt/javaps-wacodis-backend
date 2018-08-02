@@ -6,10 +6,13 @@
 package org.n52.wacodis.javaps.algorithms;
 
 import java.util.List;
+import org.geotools.data.simple.SimpleFeatureCollection;
 import org.n52.javaps.algorithm.annotation.Algorithm;
+import org.n52.javaps.algorithm.annotation.ComplexInput;
 import org.n52.javaps.algorithm.annotation.Execute;
 import org.n52.javaps.algorithm.annotation.LiteralInput;
 import org.n52.javaps.algorithm.annotation.LiteralOutput;
+import org.n52.wacodis.javaps.io.data.binding.complex.FeatureCollectionBinding;
 
 /**
  *
@@ -27,7 +30,7 @@ public class LandCoverClassificationAlgorithm {
     private String opticalImagesSourceType;
     private List<String> opticalImagesSources;
     private String referenceDataType;
-    private List<String> referenceData;
+    private SimpleFeatureCollection referenceData;
     private String product;
 
     @LiteralInput(
@@ -65,28 +68,31 @@ public class LandCoverClassificationAlgorithm {
         this.referenceDataType = value;
     }
 
-    @LiteralInput(
+    @ComplexInput(
             identifier = "REFERENCE_DATA",
             title = "Reference data",
             abstrakt = "Reference data for land cover classification",
             minOccurs = 1,
-            maxOccurs = 10,
-            defaultValue = "Sentinel-2")
-    public void setReferenceData(List<String> value) {
+            maxOccurs = 1,
+            binding = FeatureCollectionBinding.class
+    )
+    public void setReferenceData(SimpleFeatureCollection value) {
         this.referenceData = value;
     }
 
     @Execute
     public void execute() {
+        //TODO Resolve ID for optical images and fetch images as GeoTIFF
+
+        //TODO Resolve 
         String sources = String.join(",", opticalImagesSources);
-        String references = String.join(",", referenceData);
+        String references = referenceData.getBounds().toString();
         this.product = String.join("|",
                 "Optical images source type:" + opticalImagesSourceType,
                 "Optical images source:" + sources,
                 "Reference data type:" + referenceDataType,
-                "Reference data:" + references);
+                "Reference data bounding box:" + references);
     }
-
     @LiteralOutput(identifier = "PRODUCT")
     public String getOutput() {
         return this.product;
