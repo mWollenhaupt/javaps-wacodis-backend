@@ -29,4 +29,9 @@
     
     <bean id="gml3Parser" class="org.n52.wacodis.javaps.io.datahandler.parser.Gml3Parser" />
 
+	<bean id="helloWorld" class="org.n52.wacodis.javaps.algorithms.HelloWorldAlgorithm" />
+    <bean id="distance" class="org.n52.wacodis.javaps.algorithms.DistanceAlgorithm" />
+    
+    <bean id="pointParser" class="org.n52.wacodis.javaps.io.datahandler.parser.PointParser" />
+	
 </beans>
